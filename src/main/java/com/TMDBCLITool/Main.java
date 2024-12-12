@@ -1,4 +1,4 @@
-package com.FirstProject;
+package com.TMDBCLITool;
 
 public class Main {
     public static void main(String[] args) {
