@@ -21,7 +21,7 @@ cd TMDBCLITool
 
 2. Build the project using Maven:
 ```sh
-mvn clean package
+mvn clean package -DskipTests
 ```
 
 3. Make sure to have a valid API key from [The Movie Database](https://www.themoviedb.org/documentation/api) and set it as an environment variable:
@@ -46,5 +46,5 @@ Choose one of the following types:
 - playing
 
 ```sh
-java -jar .\target\TMDBCLITool-1.0-SNAPSHOT-jar-with-dependencies.jar --type <type>
+java -jar target/TMDBCLITool-1.0-jar-with-dependencies.jar --type <type>
 ```
