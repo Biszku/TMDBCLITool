@@ -15,7 +15,7 @@ TMDB CLI Tool is a simple command line application that provides videos accordin
 
 1. Clone the repository:
 ```sh
-  git clone https://github.com/yourusername/TMDBCLITool.git
+  git clone https://github.com/Biszku/TMDBCLITool.git
   cd TMDBCLITool
 ```
 
