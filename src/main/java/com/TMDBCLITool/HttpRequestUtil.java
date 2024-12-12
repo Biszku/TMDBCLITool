@@ -15,6 +15,12 @@ public class HttpRequestUtil {
     }
 
     public static String sendGetRequest(String url) {
+        if (url == null) {
+            return "Cannot fetch data when URL is null";
+        }
+        if (System.getenv("TMDB_SECRET") == null) {
+            return "Cannot fetch data when API key is not set";
+        }
         try {
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(new URI(url))
@@ -23,14 +29,9 @@ public class HttpRequestUtil {
                     .header("Authorization", "Bearer " + System.getenv("TMDB_SECRET"))
                     .build();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-
-            if (response.statusCode() != 200) {
-                return "Failed to fetch data";
-            } else {
-                return response.body();
-            }
+            return response.body();
         } catch (URISyntaxException | IOException | InterruptedException e) {
-            return "Failed to fetch data";
+            return "Error occurred while fetching data: " + e.getMessage();
         }
     }
 }

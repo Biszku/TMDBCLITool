@@ -12,7 +12,10 @@ public class CLICommandController {
     }
 
     public static String getMoviesType(String[] args) {
-        if (!args[0].equals("--type") || args[1].isEmpty()) {
+        if (args[0] == null || args[1] == null) {
+            return null;
+        }
+        if (!args[0].equals("--type") || args[1].isBlank()) {
             return null;
         }
 
